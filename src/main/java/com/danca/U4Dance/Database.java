@@ -20,6 +20,7 @@ public class Database {
 
     public Database() {
         organizadores = new ArrayList<>();
+        dancarinos = new ArrayList<>();
     }
 
     public static void addOrganizador(Organizador org) {
