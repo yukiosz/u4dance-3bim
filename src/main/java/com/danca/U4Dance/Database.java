@@ -1,3 +1,4 @@
+/*
 package com.danca.U4Dance;
 
 import java.util.ArrayList;
@@ -86,3 +87,4 @@ public class Database {
 		companhias.removeIf(deletar);
     }
 }
+*/

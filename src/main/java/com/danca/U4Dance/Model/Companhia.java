@@ -1,7 +1,15 @@
 package com.danca.U4Dance.Model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+@Entity
 public class Companhia {
-    private int id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     private String nome;
     private String cidade;
     private String nomeDono;
@@ -10,19 +18,18 @@ public class Companhia {
     public Companhia() {
     }
     
-    public Companhia(int id, String nome, String cidade, String nomeDono, int anoDeCriacao) {
-        this.id = id;
+    public Companhia(String nome, String cidade, String nomeDono, int anoDeCriacao) {
         this.nome = nome;
         this.cidade = cidade;
         this.nomeDono = nomeDono;
         this.anoDeCriacao = anoDeCriacao;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

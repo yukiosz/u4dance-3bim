@@ -7,7 +7,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class U4DanceApplication {
 
 	public static void main(String[] args) {
-		Database.init();
 		SpringApplication.run(U4DanceApplication.class, args);
 	}
 
