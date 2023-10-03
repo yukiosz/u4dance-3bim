@@ -1,23 +1,34 @@
 package com.danca.U4Dance.Model;
 
+import java.lang.annotation.Inherited;
+
+import javax.annotation.processing.Generated;
+
+@Entity
 public class Organizador {
-    protected int id;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    protected Long id;
     protected String nome;
     protected String nomeEmpresa;
     protected int idade;
 
-    public Organizador(int id, String nome, String nomeEmpresa, int idade) {
-        this.id = id;
+    public Companhia(){
+
+    }
+
+    public Organizador(String nome, String nomeEmpresa, int idade) {
         this.nome = nome;
         this.nomeEmpresa = nomeEmpresa;
         this.idade = idade;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

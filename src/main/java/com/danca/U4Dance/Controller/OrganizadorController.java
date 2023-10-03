@@ -10,21 +10,28 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.danca.U4Dance.Database;
 import com.danca.U4Dance.Model.Organizador;
+import com.danca.U4Dance.Repository.CompanhiaRepository;
 
 @RestController
+@CrossOrigin
 public class OrganizadorController {
+
+    @Autowired
+    OrganizadorRepository organizadorRepository;
+
     @GetMapping("/organizadores")
-    public List<Organizador> listarOrganizadores(){
-        return Database.recuperaOrganizador();
+    public List<Organizador> recuperar(){
+        return (List<Organizador>) organizadorRepository.findAll();
     }
 
     @PostMapping("/organizadores")
-    public void addOrganizador(@RequestBody Organizador org){
-        Database.addOrganizador(org);
+    public Organizador cadastrar(@RequestBody Organizador org){
+        organizadorRepository.save(org);
     }
 
-    @DeleteMapping("/organizadores")
-    public void deletarOrganizaores(@RequestBody Organizador org){
-        Database.delOrganizador(org);
+    @DeleteMapping("/organizadores/{id}")
+    public String deletar(@PathVariable("id") Long id){
+        organizadorRepository.deleteById(id);
+        return "Organizador do id "+ id +"excluído.";
     }
 }
