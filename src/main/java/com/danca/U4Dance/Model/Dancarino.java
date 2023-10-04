@@ -1,26 +1,37 @@
 package com.danca.U4Dance.Model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+@Entity
 public class Dancarino{
 
-    protected int id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    protected Long id;
     protected String nome;
     protected String cidade;
     protected int idade;
     protected String estilo;
+
+    public Dancarino(){
+        
+    }
     
-    public Dancarino(int id, String nome, String cidade, int idade, String estilo) {
-        this.id = id;
+    public Dancarino(String nome, String cidade, int idade, String estilo) {
         this.nome = nome;
         this.cidade = cidade;
         this.idade = idade;
         this.estilo = estilo;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
