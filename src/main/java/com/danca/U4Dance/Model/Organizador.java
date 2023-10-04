@@ -1,8 +1,9 @@
 package com.danca.U4Dance.Model;
 
-import java.lang.annotation.Inherited;
-
-import javax.annotation.processing.Generated;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 
 @Entity
 public class Organizador {
@@ -14,7 +15,7 @@ public class Organizador {
     protected String nomeEmpresa;
     protected int idade;
 
-    public Companhia(){
+    public Organizador(){
 
     }
 
