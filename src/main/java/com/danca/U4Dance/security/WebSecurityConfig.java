@@ -33,22 +33,20 @@ public class WebSecurityConfig {
                                     .requestMatchers(HttpMethod.POST, "/eventos").permitAll()
                                     .requestMatchers(HttpMethod.POST, "/organizadores").permitAll()
                                     .requestMatchers(HttpMethod.POST, "/criar").permitAll()
-
                                       ) 
             .authorizeHttpRequests(
                 authorize -> authorize.requestMatchers(HttpMethod.DELETE, "/companhia/{id}").authenticated() //Companhia
-                                      .requestMatchers(HttpMethod.GET, "/companhia").authenticated()
+                                      .requestMatchers(HttpMethod.GET, "/companhia/listar").authenticated()
 
-                                      .requestMatchers(HttpMethod.GET, "/dancarinos").authenticated() //Dancarinos
+                                      .requestMatchers(HttpMethod.GET, "/dancarinos/listar").authenticated() //Dancarinos
                                       .requestMatchers(HttpMethod.DELETE, "/dancarinos/{id}").authenticated()
 
-                                      .requestMatchers(HttpMethod.GET, "/eventos").authenticated() //Eventos
+                                      .requestMatchers(HttpMethod.GET, "/eventos/listar").authenticated() //Eventos
                                       .requestMatchers(HttpMethod.DELETE, "/eventos/{id}").authenticated()
 
-                                      .requestMatchers(HttpMethod.GET, "/organizadores").authenticated() //Organizador
+                                      .requestMatchers(HttpMethod.GET, "/organizadores/listar").authenticated() //Organizador
                                       .requestMatchers(HttpMethod.DELETE, "/organizadores/{id}").authenticated()
                                     );
-
         return http.build();
     }
 
