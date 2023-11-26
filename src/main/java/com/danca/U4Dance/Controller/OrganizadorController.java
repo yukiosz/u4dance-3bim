@@ -21,7 +21,7 @@ public class OrganizadorController {
     @Autowired
     OrganizadorRepository organizadorRepository;
 
-    @GetMapping("/organizadores")
+    @GetMapping("/organizadores/listar")
     public List<Organizador> recuperar(){
         return (List<Organizador>) organizadorRepository.findAll();
     }

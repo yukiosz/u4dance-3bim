@@ -25,7 +25,7 @@ public class CompanhiaController {
         return companhiasRepository.save(companhia);
     }
 
-    @GetMapping("/companhia")
+    @GetMapping("/companhia/listar")
     public List<Companhia> recuperar() {
         return (List<Companhia>) companhiasRepository.findAll();
     }

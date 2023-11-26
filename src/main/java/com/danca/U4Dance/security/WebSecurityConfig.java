@@ -28,10 +28,12 @@ public class WebSecurityConfig {
             .httpBasic(Customizer.withDefaults())
             .authorizeHttpRequests(
                 authorize -> authorize
-                                    .requestMatchers(HttpMethod.POST, "/companhia").authenticated()
-                                    .requestMatchers(HttpMethod.POST, "/dancarinos").authenticated()
-                                    .requestMatchers(HttpMethod.POST, "/eventos").authenticated()
-                                    .requestMatchers(HttpMethod.POST, "/organizadores").authenticated()
+                                    .requestMatchers(HttpMethod.POST, "/companhia").permitAll()
+                                    .requestMatchers(HttpMethod.POST, "/dancarinos").permitAll()
+                                    .requestMatchers(HttpMethod.POST, "/eventos").permitAll()
+                                    .requestMatchers(HttpMethod.POST, "/organizadores").permitAll()
+                                    .requestMatchers(HttpMethod.POST, "/criar").permitAll()
+
                                       ) 
             .authorizeHttpRequests(
                 authorize -> authorize.requestMatchers(HttpMethod.DELETE, "/companhia/{id}").authenticated() //Companhia
@@ -45,7 +47,6 @@ public class WebSecurityConfig {
 
                                       .requestMatchers(HttpMethod.GET, "/organizadores").authenticated() //Organizador
                                       .requestMatchers(HttpMethod.DELETE, "/organizadores/{id}").authenticated()
-                                      .requestMatchers(HttpMethod.POST, "/criar").authenticated()
                                     );
 
         return http.build();

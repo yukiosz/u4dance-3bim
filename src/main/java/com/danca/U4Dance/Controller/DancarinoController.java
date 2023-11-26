@@ -21,7 +21,7 @@ public class DancarinoController {
     @Autowired 
     DancarinoRepository dancarinoRepository;
 
-    @GetMapping("/dancarinos")
+    @GetMapping("/dancarinos/listar")
     public List<Dancarino> recuperar(){
         return (List<Dancarino>) dancarinoRepository.findAll();
     }

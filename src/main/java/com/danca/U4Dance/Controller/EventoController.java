@@ -21,7 +21,7 @@ public class EventoController {
     @Autowired
     EventoRepository eventoRepository;
 
-    @GetMapping("/eventos")
+    @GetMapping("/eventos/listar")
     public List<Evento> recuperar(){
         return (List<Evento>) eventoRepository.findAll();
     }
